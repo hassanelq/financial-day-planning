@@ -6,6 +6,7 @@ import conf3Img from "../public/conf3.png";
 import conf4Img from "../public/conf4.png";
 import conf5Img from "../public/conf5.png";
 import comp from "../public/comp.png";
+import link from "../public/link.svg";
 
 export default function Home() {
   const programme = [
@@ -74,18 +75,15 @@ export default function Home() {
       details: ["Gnaoua"],
       images: [],
     },
-    { time: "20:00", title: "Clôture de la Journée", details: [], images: [] },
-    { time: "22:00", title: "Clôture de la Journée", details: [], images: [] },
-    { time: "23:00", title: "Clôture de la Journée", details: [], images: [] },
-    { time: "24:00", title: "Clôture de la Journée", details: [], images: [] },
+    { time: "18:00", title: "Clôture de la Journée", details: [], images: [] },
   ];
 
   const currentDate = new Date(); // Dynamically get today's date and time
 
   return (
-    <section
+    <div
       id="Programme"
-      className="h-auto flex flex-col justify-center items-center text-center gap-14 px-[2vw] py-20"
+      className="h-auto flex flex-col justify-center items-center text-center gap-14 px-[2vw] pt-20"
     >
       <div>
         <p className="text-[4rem] font-bold text-[#ffa92c] leading-none">
@@ -110,7 +108,7 @@ export default function Home() {
       <div>
         <p className="text-[3rem] font-semibold pb-8 pt-16">Planning</p>
         {programme.map((item, index) => {
-          const eventStart = new Date("2024-11-20T" + item.time + ":00");
+          const eventStart = new Date("2024-11-23T" + item.time + ":00");
           const nextEventStart =
             index < programme.length - 1
               ? new Date(
@@ -169,6 +167,17 @@ export default function Home() {
           );
         })}
       </div>
-    </section>
+      <p className="pt-6 pb-10">
+        {" "}
+        Developed by{" "}
+        <a
+          href="https://www.linkedin.com/in/el-qadi/"
+          className="text-[#ffa92c]"
+        >
+          El Qadi Hassan
+          <Image src={link} alt="LinkedIn" className="w-6 ml-1 inline mb-1" />
+        </a>
+      </p>
+    </div>
   );
 }
