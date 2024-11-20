@@ -5,6 +5,7 @@ import conf2Img from "../public/conf2.png";
 import conf3Img from "../public/conf3.png";
 import conf4Img from "../public/conf4.png";
 import conf5Img from "../public/conf5.png";
+import comp from "../public/comp.png";
 
 export default function Home() {
   const programme = [
@@ -24,7 +25,7 @@ export default function Home() {
       details: [
         "L’Analyse quantitative dans la gestion des risques en Private equity",
       ],
-      image: conf1Img,
+      images: [conf1Img, conf3Img],
     },
     {
       time: "11h00",
@@ -32,31 +33,31 @@ export default function Home() {
       details: [
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
-      image: conf2Img,
+      image: [conf5Img],
     },
     {
       time: "11h45",
       title: "Pause-Café",
       details: [],
-      image: "",
+      images: "",
     },
     {
       time: "12h15",
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
-      image: conf3Img,
+      images: [conf4Img],
     },
     {
       time: "12h45",
       title: "Conférence 4",
-      details: ["Société Générale à préciser"],
-      image: conf4Img,
+      details: ["Les Métiers de la Banque d’Investissement"],
+      images: [conf2Img],
     },
     {
       time: "13h30",
       title: "Pause Déjeuner",
       details: [],
-      image: "",
+      images: "",
     },
     {
       time: "14h45",
@@ -80,7 +81,7 @@ export default function Home() {
       time: "16h15",
       title: "Compétition",
       details: [],
-      image: "",
+      images: [comp],
     },
     {
       time: "17h00",
@@ -101,20 +102,28 @@ export default function Home() {
       id="Programme"
       className="h-auto flex flex-col justify-center items-center text-center gap-14 px-[2vw] py-20"
     >
-      <div>
-        <p className="text-[4.5rem] font-bold text-[#ffa92c]">Welcome</p>
-        <p className="text-xl">to the 4th Edition of Financial day</p>
+      <div className="">
+        <p className="text-[4rem] font-bold text-[#ffa92c] leading-none">
+          Welcome
+        </p>
+        <p className="text-lg font-light">
+          to the 4th Edition of Financial day
+        </p>
       </div>
       <Image src={Logo} alt="Logo" className="w-[230px]" />
-      <div className="leading-tight flex flex-col items-center justify-center">
-        <p className="text-2xl leading-none">Les Nouveaux Horizons de</p>
-        <p className="text-[3.8rem] font-semibold text-[#ffa92c]">La Finance</p>
-        <div className="w-[290px] opacity-65 border border-white h-0 mb-1"></div>
-        <p className="text-2xl">Tendances, Technologies et</p>
-        <p className="text-2xl">Opportunités de Marché</p>
+      <div className="leading-none flex flex-col items-center justify-center">
+        <p className="text-xl pb-0.5">Theme</p>
+        <div className="w-[68px] opacity-65 border border-white h-0 mb-6"></div>
+        <p className="text-xl">Les Nouveaux Horizons de</p>
+        <p className="text-[3.5rem] font-semibold text-[#ffa92c] pb-2">
+          La Finance
+        </p>
+        <div className="w-[290px] opacity-65 border border-white h-0 mb-2"></div>
+        <p className="text-xl">Tendances, Technologies et</p>
+        <p className="text-xl">Opportunités de Marché</p>
       </div>
-      <p className="text-[3rem] font-semibold">Planning</p>
       <div className="">
+        <p className="text-[3rem] font-semibold pb-8 pt-16">Planning</p>
         {programme.map((item, index) => (
           <div
             className="flex flex-col gap-4 text-center items-center justify-center"
@@ -131,12 +140,19 @@ export default function Home() {
                 ))}
               </div>
             )}
-            {item.image && (
-              <Image
-                src={item.image}
-                alt="Conférence"
-                className="w-[500px] rounded-lg"
-              />
+            {item.images && (
+              <div className="flex flex-col">
+                {item.images.map((image, index) => (
+                  <Image
+                    src={image}
+                    alt="Conférence"
+                    width={500}
+                    height={500}
+                    key={index}
+                    className="rounded-lg"
+                  />
+                ))}
+              </div>
             )}
             {index != programme.length - 1 && (
               <div className="w-[0px] border border-white h-20 mb-1"></div>
