@@ -4,6 +4,11 @@
 
 body {
   color: #fff;
-  background: #000;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  background-image: url("../public/bg.png");
+  /* bg opacity */
+  background-color: rgba(38, 25, 59, 0.8);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
