@@ -99,16 +99,17 @@ export default function Home() {
   return (
     <section
       id="Programme"
-      className="h-auto flex flex-col justify-center items-center gap-14 px-[2vw] py-20"
+      className="h-auto flex flex-col justify-center items-center text-center gap-14 px-[2vw] py-20"
     >
-      <div className="text-center font-century">
-        <p className="text-[5rem] font-semibold text-[#ffa92c]">Welcome</p>
-        <p className="text-2xl">to the 4th Edition of Financial day</p>
+      <div>
+        <p className="text-[4.5rem] font-bold text-[#ffa92c]">Welcome</p>
+        <p className="text-xl">to the 4th Edition of Financial day</p>
       </div>
-      <Image src={Logo} alt="Logo" className="w-[250px]" />
-      <div className="text-center font-century">
-        <p className="text-2xl">Les Nouveaux Horizons de</p>
-        <p className="text-[4rem] font-semibold text-[#ffa92c]">La Finance</p>
+      <Image src={Logo} alt="Logo" className="w-[230px]" />
+      <div className="leading-tight flex flex-col items-center justify-center">
+        <p className="text-2xl leading-none">Les Nouveaux Horizons de</p>
+        <p className="text-[3.8rem] font-semibold text-[#ffa92c]">La Finance</p>
+        <div className="w-[290px] opacity-65 border border-white h-0 mb-1"></div>
         <p className="text-2xl">Tendances, Technologies et</p>
         <p className="text-2xl">Opportunités de Marché</p>
       </div>
