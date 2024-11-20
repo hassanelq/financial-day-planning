@@ -10,17 +10,17 @@ import comp from "../public/comp.png";
 export default function Home() {
   const programme = [
     {
-      time: "09h00",
+      time: "09:00",
       title: "Ouverture de la journée",
       details: [
         "Lecture de quelques versets du Coran par l’étudiant Mouad Sehlaoui",
         "Mot d'ouverture par le Directeur de l'ENSA-A, M. Hassan Hamdi",
         "Mot du coordinateur de la journée, M. Bou Mhamed Abdelhamid",
       ],
-      image: "",
+      images: [],
     },
     {
-      time: "10h00",
+      time: "10:00",
       title: "Conférence 1",
       details: [
         "L’Analyse quantitative dans la gestion des risques en Private equity",
@@ -28,86 +28,71 @@ export default function Home() {
       images: [conf1Img, conf3Img],
     },
     {
-      time: "11h00",
+      time: "11:00",
       title: "Conférence 2",
       details: [
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
-      image: [conf5Img],
+      images: [conf5Img],
     },
+    { time: "11:45", title: "Pause-Café", details: [], images: [] },
     {
-      time: "11h45",
-      title: "Pause-Café",
-      details: [],
-      images: "",
-    },
-    {
-      time: "12h15",
+      time: "12:15",
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
       images: [conf4Img],
     },
     {
-      time: "12h45",
+      time: "12:45",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
       images: [conf2Img],
     },
+    { time: "13:30", title: "Pause Déjeuner", details: [], images: [] },
     {
-      time: "13h30",
-      title: "Pause Déjeuner",
-      details: [],
-      images: "",
-    },
-    {
-      time: "14h45",
+      time: "14:45",
       title: "Lancement de la Plateforme",
       details: [],
-      image: "",
+      images: [],
     },
     {
-      time: "15h15",
+      time: "15:15",
       title: "Présentation Étudiante (FID3)",
       details: ["Présentation par Fatima Zahra Koukou"],
-      image: "",
+      images: [],
     },
     {
-      time: "15h45",
+      time: "15:45",
       title: "Présentations Étudiants (FID2)",
       details: ["Bou Mhamed Abdelhamid", "Daniel Anonwodji"],
-      image: "",
+      images: [],
     },
+    { time: "16:15", title: "Compétition", details: [], images: [comp] },
     {
-      time: "16h15",
-      title: "Compétition",
-      details: [],
-      images: [comp],
-    },
-    {
-      time: "17h00",
+      time: "17:00",
       title: "Animation musicale",
       details: ["Gnaoua"],
-      image: "",
+      images: [],
     },
-    {
-      time: "Clôture de la Journée",
-      title: "",
-      details: [],
-      image: "",
-    },
+    { time: "20:00", title: "Clôture de la Journée", details: [], images: [] },
+    { time: "22:00", title: "Clôture de la Journée", details: [], images: [] },
+    { time: "23:00", title: "Clôture de la Journée", details: [], images: [] },
+    { time: "24:00", title: "Clôture de la Journée", details: [], images: [] },
   ];
+
+  const currentDate = new Date(); // Dynamically get today's date and time
 
   return (
     <section
       id="Programme"
       className="h-auto flex flex-col justify-center items-center text-center gap-14 px-[2vw] py-20"
     >
-      <div className="">
+      <div>
         <p className="text-[4rem] font-bold text-[#ffa92c] leading-none">
           Welcome
         </p>
         <p className="text-lg font-light">
-          to the 4th Edition of Financial day
+          to the 4th Edition of Financial Day
         </p>
       </div>
       <Image src={Logo} alt="Logo" className="w-[230px]" />
@@ -122,43 +107,67 @@ export default function Home() {
         <p className="text-xl">Tendances, Technologies et</p>
         <p className="text-xl">Opportunités de Marché</p>
       </div>
-      <div className="">
+      <div>
         <p className="text-[3rem] font-semibold pb-8 pt-16">Planning</p>
-        {programme.map((item, index) => (
-          <div
-            className="flex flex-col gap-4 text-center items-center justify-center"
-            key={index}
-          >
-            <div className="text-5xl font-semibold">{item.time}</div>
-            <div className="text-3xl font-medium px-6 text-[#ffa92c]">
-              {item.title}
+        {programme.map((item, index) => {
+          const eventStart = new Date("2024-11-20T" + item.time + ":00");
+          const nextEventStart =
+            index < programme.length - 1
+              ? new Date(
+                  currentDate.toDateString() + " " + programme[index + 1].time
+                )
+              : null;
+
+          const status =
+            eventStart < currentDate &&
+            (!nextEventStart || currentDate < nextEventStart)
+              ? "current"
+              : eventStart < currentDate
+              ? "past"
+              : "upcoming";
+
+          return (
+            <div
+              className={`flex flex-col gap-4 text-center items-center justify-center ${
+                status === "past"
+                  ? "opacity-50"
+                  : status === "current"
+                  ? " rounded-xl border-2 border-[#ffa92c] p-4"
+                  : ""
+              }`}
+              key={index}
+            >
+              <div className="text-5xl font-semibold">{item.time}</div>
+              <div className="text-3xl font-medium px-6 text-[#ffa92c]">
+                {item.title}
+              </div>
+              {item.details && (
+                <div className="text-lg font-thin px-6">
+                  {item.details.map((detail, index) => (
+                    <p key={index}>{detail}</p>
+                  ))}
+                </div>
+              )}
+              {item.images && (
+                <div className="flex flex-col">
+                  {item.images.map((image, index) => (
+                    <Image
+                      src={image}
+                      alt="Conférence"
+                      width={500}
+                      height={500}
+                      key={index}
+                      className="rounded-lg"
+                    />
+                  ))}
+                </div>
+              )}
+              {index !== programme.length - 1 && (
+                <div className="w-[0px] border border-white h-20 mb-1"></div>
+              )}
             </div>
-            {item.details && (
-              <div className="text-lg font-thin px-6">
-                {item.details.map((detail, index) => (
-                  <p key={index}>{detail}</p>
-                ))}
-              </div>
-            )}
-            {item.images && (
-              <div className="flex flex-col">
-                {item.images.map((image, index) => (
-                  <Image
-                    src={image}
-                    alt="Conférence"
-                    width={500}
-                    height={500}
-                    key={index}
-                    className="rounded-lg"
-                  />
-                ))}
-              </div>
-            )}
-            {index != programme.length - 1 && (
-              <div className="w-[0px] border border-white h-20 mb-1"></div>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
