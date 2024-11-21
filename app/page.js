@@ -54,11 +54,12 @@ export default function Home() {
     {
       time: "14:30",
       title: "Présentation Étudiante (FID3)",
-      details: ["Présentation par Fatima Zahra Koukou"],
-      images: [
+      details: [
+        "Présentation par Fatima Zahra Koukou",
         "Financial Toolkit platform : Dynamique, Efficacité et  Inclusivité",
         "Des projets académiques Visionnaire pour la Finance de Demain",
       ],
+      images: [],
     },
     {
       time: "15:05",
