@@ -22,7 +22,7 @@ export default function Home() {
       images: [],
     },
     {
-      time: "10:00",
+      time: "09:30",
       title: "Conférence 1",
       details: [
         "L’Analyse quantitative dans la gestion des risques en Private equity",
@@ -30,53 +30,47 @@ export default function Home() {
       images: [conf1Img, conf3Img],
     },
     {
-      time: "11:00",
+      time: "10:25",
       title: "Conférence 2",
       details: [
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
       images: [conf5Img],
     },
-    { time: "11:45", title: "Pause-Café", details: [], images: [] },
+    { time: "11:05", title: "Pause-Café", details: [], images: [] },
     {
-      time: "12:15",
+      time: "11:35",
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
       images: [conf4Img],
     },
     {
-      time: "12:45",
+      time: "12:10",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
       images: [conf2Img, conf6Img],
     },
-    { time: "13:30", title: "Pause Déjeuner", details: [], images: [] },
+    { time: "13:00", title: "Pause Déjeuner", details: [], images: [] },
     {
-      time: "14:45",
-      title: "Lancement de la Plateforme",
-      details: [],
-      images: [],
-    },
-    {
-      time: "15:15",
+      time: "14:30",
       title: "Présentation Étudiante (FID3)",
       details: ["Présentation par Fatima Zahra Koukou"],
       images: [],
     },
     {
-      time: "15:45",
+      time: "15:05",
       title: "Présentations Étudiants (FID2)",
       details: ["Bou Mhamed Abdelhamid", "Daniel Anonwodji"],
       images: [],
     },
-    { time: "16:15", title: "Compétition", details: [], images: [comp] },
+    { time: "15:35", title: "Compétition", details: [], images: [comp] },
     {
-      time: "17:00",
+      time: "16:00",
       title: "Animation musicale",
       details: ["Gnaoua"],
       images: [],
     },
-    { time: "18:00", title: "Clôture de la Journée", details: [], images: [] },
+    { time: "17:00", title: "Clôture de la Journée", details: [], images: [] },
   ];
 
   const currentDate = new Date(); // Dynamically get today's date and time
