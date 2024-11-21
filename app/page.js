@@ -5,6 +5,7 @@ import conf2Img from "../public/conf2.png";
 import conf3Img from "../public/conf3.png";
 import conf4Img from "../public/conf4.png";
 import conf5Img from "../public/conf5.png";
+import conf6Img from "../public/conf6.png";
 import comp from "../public/comp.png";
 import link from "../public/link.svg";
 
@@ -47,7 +48,7 @@ export default function Home() {
       time: "12:45",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
-      images: [conf2Img],
+      images: [conf2Img, conf6Img],
     },
     { time: "13:30", title: "Pause Déjeuner", details: [], images: [] },
     {
