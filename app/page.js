@@ -60,7 +60,11 @@ export default function Home() {
     {
       time: "15:05",
       title: "Présentations Étudiants (FID2)",
-      details: ["Bou Mhamed Abdelhamid", "Daniel Anonwodji", "Wassim Kerdoun"],
+      details: [
+        "Bou Mhamed Abdelhamid<br/>L'Ordre dans le Désordre : Le K-Means et la Quête de Structure dans la Finance de Marché",
+        "Daniel Anonwodji<br/>Simulation Monte Carlo vs Optimisation quadratique : Minimisation du Tracking Error dans la gestion indicielle",
+        "Wassim Kerdoun<br/>Monte Carlo Pricing of European Options with Volatility Surface and Greeks Analysis",
+      ],
       images: [],
     },
     { time: "15:35", title: "Compétition", details: [], images: [comp] },
