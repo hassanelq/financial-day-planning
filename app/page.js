@@ -167,7 +167,7 @@ export default function Home() {
           );
         })}
       </div>
-      <p className="pt-6 pb-10">
+      {/* <p className="pt-6 pb-10">
         {" "}
         Developed by{" "}
         <a
@@ -177,7 +177,7 @@ export default function Home() {
           El Qadi Hassan
           <Image src={link} alt="LinkedIn" className="w-6 ml-1 inline mb-1" />
         </a>
-      </p>
+      </p> */}
     </div>
   );
 }
