@@ -60,7 +60,7 @@ export default function Home() {
     {
       time: "15:05",
       title: "Présentations Étudiants (FID2)",
-      details: ["Bou Mhamed Abdelhamid", "Daniel Anonwodji"],
+      details: ["Bou Mhamed Abdelhamid", "Daniel Anonwodji", "Wassim Kerdoun"],
       images: [],
     },
     { time: "15:35", title: "Compétition", details: [], images: [comp] },
