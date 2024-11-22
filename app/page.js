@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 import Logo from "../public/Logo.svg";
 import Img2CF from "../public/Img2cf.png";
@@ -9,6 +12,16 @@ import comp from "../public/comp.png";
 import link from "../public/link.svg";
 
 export default function Home() {
+  const [currentDate, setCurrentDate] = useState(new Date()); // Store current time
+
+  // Update the current time every second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000); // Update every second
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   const programme = [
     {
       time: "09:00",
@@ -72,7 +85,7 @@ export default function Home() {
       ],
       image: "",
     },
-    { time: "15:35", title: "Compétition", details: [], image: comp },
+    { time: "15:40", title: "Compétition", details: [], image: comp },
     {
       time: "16:00",
       title: "Animation musicale",
@@ -80,8 +93,6 @@ export default function Home() {
     },
     { time: "17:00", title: "Clôture de la Journée", details: [], image: "" },
   ];
-
-  const currentDate = new Date(); // Dynamically get today's date and time
 
   return (
     <div
@@ -111,11 +122,13 @@ export default function Home() {
       <div>
         <p className="text-[3rem] font-semibold pb-8 pt-16">Planning</p>
         {programme.map((item, index) => {
-          const eventStart = new Date("2024-11-23T" + item.time + ":00");
+          const eventStart = new Date(`2024-11-23T${item.time}:00`);
           const nextEventStart =
             index < programme.length - 1
               ? new Date(
-                  currentDate.toDateString() + " " + programme[index + 1].time
+                  `${currentDate.toDateString()} ${
+                    programme[index + 1].time
+                  }:00`
                 )
               : null;
 
@@ -130,35 +143,39 @@ export default function Home() {
           return (
             <div
               className={`flex flex-col gap-4 text-center items-center justify-center ${
-                status === "past"
-                  ? "opacity-50"
-                  : status === "current"
-                  ? " rounded-xl border-2 border-[#ffa92c] p-4"
-                  : ""
+                status === "past" ? "opacity-50" : ""
               }`}
               key={index}
             >
-              <div className="text-5xl font-semibold">{item.time}</div>
-              <div className="text-3xl font-medium px-6 text-[#ffa92c]">
-                {item.title}
-              </div>
-              {item.details && (
-                <div className="text-lg font-thin px-6">
-                  {item.details.map((detail, index) => (
-                    <p key={index}>{detail}</p>
-                  ))}
+              <div
+                className={`flex flex-col gap-4 text-center items-center justify-center ${
+                  status === "current"
+                    ? "rounded-xl border-2 border-[#ffa92c] p-4 bg-[#ffa92c] bg-opacity-15"
+                    : ""
+                }`}
+              >
+                <div className="text-5xl font-semibold">{item.time}</div>
+                <div className="text-3xl font-medium px-6 text-[#ffa92c]">
+                  {item.title}
                 </div>
-              )}
-              {item.image && (
-                <Image
-                  src={item.image}
-                  alt="Conférence"
-                  width={500}
-                  height={500}
-                  key={index}
-                  className="rounded-lg"
-                />
-              )}
+                {item.details && (
+                  <div className="text-lg font-thin px-6">
+                    {item.details.map((detail, index) => (
+                      <p key={index}>{detail}</p>
+                    ))}
+                  </div>
+                )}
+                {item.image && (
+                  <Image
+                    src={item.image}
+                    alt="Conférence"
+                    width={500}
+                    height={500}
+                    key={index}
+                    className="rounded-lg"
+                  />
+                )}
+              </div>
               {index !== programme.length - 1 && (
                 <div className="w-[0px] border border-white h-28 mb-4"></div>
               )}
