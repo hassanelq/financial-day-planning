@@ -25,7 +25,7 @@ export default function Home() {
       details: [
         "L’Analyse quantitative dans la gestion des risques en Private equity",
       ],
-      images: Img2CF,
+      image: Img2CF,
     },
     {
       time: "10:25",
@@ -33,20 +33,20 @@ export default function Home() {
       details: [
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
-      images: Aatek,
+      image: Aatek,
     },
     { time: "11:05", title: "Pause-Café" },
     {
       time: "11:35",
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
-      images: kaddi,
+      image: kaddi,
     },
     {
       time: "12:10",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
-      images: SG,
+      image: SG,
     },
     { time: "13:00", title: "Pause Déjeuner" },
     {
@@ -69,13 +69,13 @@ export default function Home() {
         "( Monte Carlo Pricing of European Options with Volatility Surface and Greeks Analysis )",
       ],
     },
-    { time: "15:35", title: "Compétition", details: [], images: [comp] },
+    { time: "15:35", title: "Compétition", details: [], image: [comp] },
     {
       time: "16:00",
       title: "Animation musicale",
       details: ["Gnaoua"],
     },
-    { time: "17:00", title: "Clôture de la Journée", details: [], images: [] },
+    { time: "17:00", title: "Clôture de la Journée", details: [], image: [] },
   ];
 
   const currentDate = new Date(); // Dynamically get today's date and time
@@ -146,19 +146,15 @@ export default function Home() {
                   ))}
                 </div>
               )}
-              {item.images && (
-                <div className="flex flex-col">
-                  {item.images.map((image, index) => (
-                    <Image
-                      src={image}
-                      alt="Conférence"
-                      width={500}
-                      height={500}
-                      key={index}
-                      className="rounded-lg"
-                    />
-                  ))}
-                </div>
+              {item.image && (
+                <Image
+                  src={image}
+                  alt="Conférence"
+                  width={500}
+                  height={500}
+                  key={index}
+                  className="rounded-lg"
+                />
               )}
               {index !== programme.length - 1 && (
                 <div className="w-[0px] border border-white h-28 mb-4"></div>
