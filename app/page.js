@@ -151,7 +151,7 @@ export default function Home() {
               )}
               {item.image && (
                 <Image
-                  src={image}
+                  src={item.image}
                   alt="Conférence"
                   width={500}
                   height={500}
