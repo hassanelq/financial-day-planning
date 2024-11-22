@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Logo from "../public/Logo.svg";
-import conf1Img from "../public/conf1.png";
-import conf2Img from "../public/conf2.png";
-import conf3Img from "../public/conf3.png";
-import conf4Img from "../public/conf4.png";
-import conf5Img from "../public/conf5.png";
-import conf6Img from "../public/conf6.png";
+import Img2CF from "../public/Img2cf.png";
+import SG from "../public/SG.png";
+import kaddi from "../public/kaddi.png";
+import Aatek from "../public/Aatek.png";
 import Logos from "../public/Logos.png";
 import comp from "../public/comp.png";
 import link from "../public/link.svg";
@@ -20,7 +18,6 @@ export default function Home() {
         "Mot d'ouverture par le Directeur de l'ENSA-A, M. Hassan Hamdi",
         "Mot du coordinateur de la journée, M. Bou Mhamed Abdelhamid",
       ],
-      images: [],
     },
     {
       time: "09:30",
@@ -28,7 +25,7 @@ export default function Home() {
       details: [
         "L’Analyse quantitative dans la gestion des risques en Private equity",
       ],
-      images: [conf1Img, conf3Img],
+      images: Img2CF,
     },
     {
       time: "10:25",
@@ -36,22 +33,22 @@ export default function Home() {
       details: [
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
-      images: [conf5Img],
+      images: Aatek,
     },
-    { time: "11:05", title: "Pause-Café", details: [], images: [] },
+    { time: "11:05", title: "Pause-Café" },
     {
       time: "11:35",
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
-      images: [conf4Img],
+      images: kaddi,
     },
     {
       time: "12:10",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
-      images: [conf2Img, conf6Img],
+      images: SG,
     },
-    { time: "13:00", title: "Pause Déjeuner", details: [], images: [] },
+    { time: "13:00", title: "Pause Déjeuner" },
     {
       time: "14:30",
       title: "Présentation Étudiante (FID3)",
@@ -59,7 +56,6 @@ export default function Home() {
         "Fatima Zahra Koukou",
         "Financial Toolkit platform : Dynamique, Efficacité et Inclusivité. Des projets académiques visionnaire pour la finance de demain",
       ],
-      images: [],
     },
     {
       time: "15:05",
@@ -72,14 +68,12 @@ export default function Home() {
         "Wassim Kerdoun",
         "( Monte Carlo Pricing of European Options with Volatility Surface and Greeks Analysis )",
       ],
-      images: [],
     },
     { time: "15:35", title: "Compétition", details: [], images: [comp] },
     {
       time: "16:00",
       title: "Animation musicale",
       details: ["Gnaoua"],
-      images: [],
     },
     { time: "17:00", title: "Clôture de la Journée", details: [], images: [] },
   ];
