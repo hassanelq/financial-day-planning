@@ -18,6 +18,7 @@ export default function Home() {
         "Mot d'ouverture par le Directeur de l'ENSA-A, M. Hassan Hamdi",
         "Mot du coordinateur de la journée, M. Bou Mhamed Abdelhamid",
       ],
+      image: "",
     },
     {
       time: "09:30",
@@ -35,7 +36,7 @@ export default function Home() {
       ],
       image: Aatek,
     },
-    { time: "11:05", title: "Pause-Café" },
+    { time: "11:05", title: "Pause-Café", image: "" },
     {
       time: "11:35",
       title: "Conférence 3",
@@ -56,6 +57,7 @@ export default function Home() {
         "Fatima Zahra Koukou",
         "Financial Toolkit platform : Dynamique, Efficacité et Inclusivité. Des projets académiques visionnaire pour la finance de demain",
       ],
+      image: "",
     },
     {
       time: "15:05",
@@ -68,14 +70,15 @@ export default function Home() {
         "Wassim Kerdoun",
         "( Monte Carlo Pricing of European Options with Volatility Surface and Greeks Analysis )",
       ],
+      image: "",
     },
-    { time: "15:35", title: "Compétition", details: [], image: [comp] },
+    { time: "15:35", title: "Compétition", details: [], image: comp },
     {
       time: "16:00",
       title: "Animation musicale",
       details: ["Gnaoua"],
     },
-    { time: "17:00", title: "Clôture de la Journée", details: [], image: [] },
+    { time: "17:00", title: "Clôture de la Journée", details: [], image: "" },
   ];
 
   const currentDate = new Date(); // Dynamically get today's date and time
