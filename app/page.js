@@ -6,6 +6,7 @@ import conf3Img from "../public/conf3.png";
 import conf4Img from "../public/conf4.png";
 import conf5Img from "../public/conf5.png";
 import conf6Img from "../public/conf6.png";
+import Logos from "../public/Logos.png";
 import comp from "../public/comp.png";
 import link from "../public/link.svg";
 
@@ -55,9 +56,8 @@ export default function Home() {
       time: "14:30",
       title: "Présentation Étudiante (FID3)",
       details: [
-        "Présentation par Fatima Zahra Koukou",
-        "Financial Toolkit platform : Dynamique, Efficacité et  Inclusivité",
-        "Des projets académiques Visionnaire pour la Finance de Demain",
+        "Fatima Zahra Koukou",
+        "Financial Toolkit platform : Dynamique, Efficacité et Inclusivité. Des projets académiques visionnaire pour la finance de demain",
       ],
       images: [],
     },
@@ -66,11 +66,11 @@ export default function Home() {
       title: "Présentations Étudiants (FID2)",
       details: [
         "Bou Mhamed Abdelhamid",
-        "L'Ordre dans le Désordre : Le K-Means et la Quête de Structure dans la Finance de Marché",
+        "( L'Ordre dans le Désordre : Le K-Means et la Quête de Structure dans la Finance de Marché )",
         "Daniel Anonwodji",
-        "Simulation Monte Carlo vs Optimisation quadratique : Minimisation du Tracking Error dans la gestion indicielle",
+        "( Simulation Monte Carlo vs Optimisation quadratique : Minimisation du Tracking Error dans la gestion indicielle )",
         "Wassim Kerdoun",
-        "Monte Carlo Pricing of European Options with Volatility Surface and Greeks Analysis",
+        "( Monte Carlo Pricing of European Options with Volatility Surface and Greeks Analysis )",
       ],
       images: [],
     },
@@ -167,13 +167,18 @@ export default function Home() {
                 </div>
               )}
               {index !== programme.length - 1 && (
-                <div className="w-[0px] border border-white h-20 mb-1"></div>
+                <div className="w-[0px] border border-white h-28 mb-4"></div>
               )}
             </div>
           );
         })}
       </div>
-      <p className="pt-6 pb-10">
+      <Image
+        src={Logos}
+        alt="Logos"
+        className="max-w-full sm:w-[50%] lg:w-[30%] mt-4 px-3"
+      />
+      <p className="pt-4 pb-10">
         {" "}
         Developed by{" "}
         <a
