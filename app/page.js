@@ -122,15 +122,21 @@ export default function Home() {
       <div>
         <p className="text-[3rem] font-semibold pb-8 pt-16">Planning</p>
         {programme.map((item, index) => {
-          const eventStart = new Date(`2024-11-23T${item.time}:00`);
+
+          const eventStart = new Date(`${currentDate.toDateString()} ${item.time}`);
           const nextEventStart =
-            index < programme.length - 1
-              ? new Date(
-                  `${currentDate.toDateString()} ${
-                    programme[index + 1].time
-                  }:00`
-                )
-              : null;
+             index < programme.length - 1
+                  ? new Date(`${currentDate.toDateString()} ${programme[index + 1].time}`)
+                  : null;
+
+          //const eventStart = new Date(`2024-11-23T${item.time}:00`);
+          //const nextEventStart =
+           // index < programme.length - 1
+           //   ? new Date(
+         //        `${currentDate.toDateString()} ${
+           //       programme[index + 1].time
+          //    }:00`  )
+            //  : null;
 
           const status =
             eventStart < currentDate &&
