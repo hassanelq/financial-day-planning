@@ -68,7 +68,7 @@ export default function Home() {
       image: SG,
       status: "past",
     },
-    { time: "14:15", title: "Pause Déjeuner", status: "current" },
+    { time: "14:15", title: "Pause Déjeuner", status: "past" },
     {
       time: "16:30",
       title: "Présentation Étudiante (FID3)",
@@ -77,6 +77,7 @@ export default function Home() {
         "Financial Toolkit platform : Dynamique, Efficacité et Inclusivité. Des projets académiques visionnaire pour la finance de demain",
       ],
       image: "",
+      status: "current",
     },
     {
       time: "16:05",
