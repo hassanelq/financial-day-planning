@@ -68,7 +68,7 @@ export default function Home() {
       image: SG,
       status: "past",
     },
-    { time: "14:20", title: "Pause Déjeuner", status: "current" },
+    { time: "14:15", title: "Pause Déjeuner", status: "current" },
     {
       time: "16:30",
       title: "Présentation Étudiante (FID3)",
