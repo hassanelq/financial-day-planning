@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
@@ -17,11 +17,11 @@ export default function Home() {
   // Update the current time every second
 
   useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentDate(new Date());
-  }, 1000);
-  return () => clearInterval(interval);
-}, []);
+    const interval = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const programme = [
     {
@@ -33,7 +33,7 @@ export default function Home() {
         "Mot du coordinateur de la journée, M. Bou Mhamed Abdelhamid",
       ],
       image: "",
-      status:"past"
+      status: "past",
     },
     {
       time: "10:30",
@@ -42,7 +42,7 @@ export default function Home() {
         "L’Analyse quantitative dans la gestion des risques en Private equity",
       ],
       image: Img2CF,
-      status:"past"
+      status: "past",
     },
     {
       time: "11:25",
@@ -51,27 +51,24 @@ export default function Home() {
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
       image: Aatek,
-status:"past"
-
+      status: "past",
     },
-    { time: "12:25", title: "Pause-Café", image: "",status:"past" },
+    { time: "12:25", title: "Pause-Café", image: "", status: "past" },
     {
       time: "12:50",
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
       image: kaddi,
-status:"past"
-
+      status: "past",
     },
     {
       time: "13:45",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
       image: SG,
-status:"past"
-
+      status: "past",
     },
-    { time: "14:40", title: "Pause Déjeuner" ,status:"current" },
+    { time: "14:20", title: "Pause Déjeuner", status: "current" },
     {
       time: "16:30",
       title: "Présentation Étudiante (FID3)",
@@ -131,8 +128,6 @@ status:"past"
       <div>
         <p className="text-[3rem] font-semibold pb-8 pt-16">Planning</p>
         {programme.map((item, index) => {
-
-         
           return (
             <div
               className={`flex flex-col gap-4 text-center items-center justify-center ${
