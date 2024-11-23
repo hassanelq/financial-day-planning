@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
@@ -33,6 +33,7 @@ export default function Home() {
         "Mot du coordinateur de la journée, M. Bou Mhamed Abdelhamid",
       ],
       image: "",
+      status:"past"
     },
     {
       time: "10:30",
@@ -41,6 +42,7 @@ export default function Home() {
         "L’Analyse quantitative dans la gestion des risques en Private equity",
       ],
       image: Img2CF,
+      status:"past"
     },
     {
       time: "11:25",
@@ -49,6 +51,8 @@ export default function Home() {
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
       image: Aatek,
+status:"past"
+
     },
     { time: "12:25", title: "Pause-Café", image: "" },
     {
@@ -56,14 +60,18 @@ export default function Home() {
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
       image: kaddi,
+status:"past"
+
     },
     {
       time: "13:45",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
       image: SG,
+status:"past"
+
     },
-    { time: "14:40", title: "Pause Déjeuner" },
+    { time: "14:40", title: "Pause Déjeuner" ,status:"current" },
     {
       time: "16:30",
       title: "Présentation Étudiante (FID3)",
@@ -124,33 +132,17 @@ export default function Home() {
         <p className="text-[3rem] font-semibold pb-8 pt-16">Planning</p>
         {programme.map((item, index) => {
 
-          const eventStart = new Date(`2024-11-23T${item.time}:00`);
-          const nextEventStart =
-            index < programme.length - 1
-             ? new Date(
-                 `${currentDate.toDateString()} ${
-                  programme[index + 1].time
-              }:00`  )
-              : null;
-
-          const status =
-            eventStart < currentDate &&
-            (!nextEventStart || currentDate < nextEventStart)
-              ? "current"
-              : eventStart < currentDate
-              ? "past"
-              : "upcoming";
-
+         
           return (
             <div
               className={`flex flex-col gap-4 text-center items-center justify-center ${
-                status === "past" ? "opacity-50" : ""
+                item.status === "past" ? "opacity-50" : ""
               }`}
               key={index}
             >
               <div
                 className={`flex flex-col gap-4 text-center items-center justify-center ${
-                  status === "current"
+                  item.status === "current"
                     ? "rounded-xl border-2 border-[#ffa92c] p-4 bg-[#ffa92c] bg-opacity-15"
                     : ""
                 }`}
