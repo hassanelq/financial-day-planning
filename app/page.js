@@ -15,12 +15,19 @@ export default function Home() {
   const [currentDate, setCurrentDate] = useState(new Date()); // Store current time
 
   // Update the current time every second
+//  useEffect(() => {
+  //  const interval = setInterval(() => {
+  //    setCurrentDate(new Date());
+  //  }, 1000); // Update every second
+  //  return () => clearInterval(interval); // Cleanup on unmount
+  //}, []);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 1000); // Update every second
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  const interval = setInterval(() => {
+    setCurrentDate(new Date());
+  }, 1000);
+  return () => clearInterval(interval);
+}, []);
 
   const programme = [
     {
