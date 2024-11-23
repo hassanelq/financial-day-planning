@@ -54,7 +54,7 @@ export default function Home() {
 status:"past"
 
     },
-    { time: "12:25", title: "Pause-Café", image: "" },
+    { time: "12:25", title: "Pause-Café", image: "",status:"past" },
     {
       time: "12:50",
       title: "Conférence 3",
