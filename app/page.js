@@ -49,22 +49,22 @@ export default function Home() {
       ],
       image: Aatek,
     },
-    { time: "12:05", title: "Pause-Café", image: "" },
+    { time: "12:25", title: "Pause-Café", image: "" },
     {
-      time: "12:05",
+      time: "12:50",
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
       image: kaddi,
     },
     {
-      time: "13:10",
+      time: "13:45",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
       image: SG,
     },
-    { time: "14:00", title: "Pause Déjeuner" },
+    { time: "14:40", title: "Pause Déjeuner" },
     {
-      time: "15:30",
+      time: "16:30",
       title: "Présentation Étudiante (FID3)",
       details: [
         "Fatima Zahra Koukou",
