@@ -15,12 +15,6 @@ export default function Home() {
   const [currentDate, setCurrentDate] = useState(new Date()); // Store current time
 
   // Update the current time every second
-//  useEffect(() => {
-  //  const interval = setInterval(() => {
-  //    setCurrentDate(new Date());
-  //  }, 1000); // Update every second
-  //  return () => clearInterval(interval); // Cleanup on unmount
-  //}, []);
 
   useEffect(() => {
   const interval = setInterval(() => {
@@ -130,20 +124,14 @@ export default function Home() {
         <p className="text-[3rem] font-semibold pb-8 pt-16">Planning</p>
         {programme.map((item, index) => {
 
-          const eventStart = new Date(`${currentDate.toDateString()} ${item.time}`);
+          const eventStart = new Date(`2024-11-23T${item.time}:00`);
           const nextEventStart =
-             index < programme.length - 1
-                  ? new Date(`${currentDate.toDateString()} ${programme[index + 1].time}`)
-                  : null;
-
-          //const eventStart = new Date(`2024-11-23T${item.time}:00`);
-          //const nextEventStart =
-           // index < programme.length - 1
-           //   ? new Date(
-         //        `${currentDate.toDateString()} ${
-           //       programme[index + 1].time
-          //    }:00`  )
-            //  : null;
+            index < programme.length - 1
+             ? new Date(
+                 `${currentDate.toDateString()} ${
+                  programme[index + 1].time
+              }:00`  )
+              : null;
 
           const status =
             eventStart < currentDate &&
