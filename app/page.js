@@ -33,7 +33,6 @@ export default function Home() {
         "Mot du coordinateur de la journée, M. Bou Mhamed Abdelhamid",
       ],
       image: "",
-      status: "past",
     },
     {
       time: "10:30",
@@ -42,7 +41,6 @@ export default function Home() {
         "L’Analyse quantitative dans la gestion des risques en Private equity",
       ],
       image: Img2CF,
-      status: "past",
     },
     {
       time: "11:25",
@@ -51,24 +49,21 @@ export default function Home() {
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
       image: Aatek,
-      status: "past",
     },
-    { time: "12:25", title: "Pause-Café", image: "", status: "past" },
+    { time: "12:25", title: "Pause-Café", image: "" },
     {
       time: "12:50",
       title: "Conférence 3",
       details: ["Commando Front Office et les nouveaux horizons de la finance"],
       image: kaddi,
-      status: "past",
     },
     {
       time: "13:45",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
       image: SG,
-      status: "past",
     },
-    { time: "14:15", title: "Pause Déjeuner", status: "past" },
+    { time: "14:15", title: "Pause Déjeuner" },
     {
       time: "16:30",
       title: "Présentation Étudiante (FID3)",
@@ -77,7 +72,6 @@ export default function Home() {
         "Financial Toolkit platform : Dynamique, Efficacité et Inclusivité. Des projets académiques visionnaire pour la finance de demain",
       ],
       image: "",
-      status: "current",
     },
     {
       time: "16:05",
