@@ -24,7 +24,7 @@ export default function Home() {
 
   const programme = [
     {
-      time: "09:30",
+      time: "10:00",
       title: "Ouverture de la journée",
       details: [
         "Lecture de quelques versets du Coran par l’étudiant Mouad Sehlaoui",
@@ -34,7 +34,7 @@ export default function Home() {
       image: "",
     },
     {
-      time: "10:00",
+      time: "10:30",
       title: "Conférence 1",
       details: [
         "L’Analyse quantitative dans la gestion des risques en Private equity",
@@ -42,14 +42,14 @@ export default function Home() {
       image: Img2CF,
     },
     {
-      time: "10:55",
+      time: "11:25",
       title: "Conférence 2",
       details: [
         "Gestion des actifs : Un moteur pour le développement économique du Maroc",
       ],
       image: Aatek,
     },
-    { time: "11:35", title: "Pause-Café", image: "" },
+    { time: "12:05", title: "Pause-Café", image: "" },
     {
       time: "12:05",
       title: "Conférence 3",
@@ -57,14 +57,14 @@ export default function Home() {
       image: kaddi,
     },
     {
-      time: "12:40",
+      time: "13:10",
       title: "Conférence 4",
       details: ["Les Métiers de la Banque d’Investissement"],
       image: SG,
     },
-    { time: "13:30", title: "Pause Déjeuner" },
+    { time: "14:00", title: "Pause Déjeuner" },
     {
-      time: "15:00",
+      time: "15:30",
       title: "Présentation Étudiante (FID3)",
       details: [
         "Fatima Zahra Koukou",
@@ -73,7 +73,7 @@ export default function Home() {
       image: "",
     },
     {
-      time: "15:35",
+      time: "16:05",
       title: "Présentations Étudiants (FID2)",
       details: [
         "Bou Mhamed Abdelhamid",
@@ -85,7 +85,7 @@ export default function Home() {
       ],
       image: "",
     },
-    { time: "16:10", title: "Compétition", details: [], image: comp },
+    { time: "16:40", title: "Compétition", details: [], image: comp },
     {
       time: "17:00",
       title: "Animation musicale",
